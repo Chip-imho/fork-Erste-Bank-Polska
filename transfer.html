@@ -1,5 +1,9 @@
 <!doctype html>
-<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Przelew — Demo</title>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Przelew — Demo</title>
 <style>
 :root{--blue:#2468df;--navy:#102e59;--muted:#66758b;--line:#e4eaf2;--pale:#f4f8fd}
 *{box-sizing:border-box}body{margin:0;background:#fff;color:#17345b;font:14px Arial,sans-serif}
@@ -21,21 +25,66 @@ input,select{width:100%;max-width:520px;padding:12px;border:1px solid #cbd5e2;bo
 button,.back{display:inline-block;border:0;background:var(--blue);color:white;padding:12px 22px;border-radius:5px;font-weight:bold;text-decoration:none;margin-top:22px;cursor:pointer}
 small{color:var(--muted)}footer{margin-top:42px;background:var(--pale);padding:25px;color:#35506f}
 @media(max-width:720px){.layout{grid-template-columns:1fr}.side{display:none}.wrap{padding:12px}}
-</style></head><body><div class="demo"></div><div class="wrap">
+</style>
+</head>
+<body>
+<div class="demo"></div>
+<div class="wrap">
 <header><div class="logo">ERSTE</div><div style="color:#66758b;font-size:12px">　　<a href="dashboard.html">Powrót</a></div></header>
 <nav><a href="dashboard.html">Finanse</a><span class="active">Przelewy</span><a href="dashboard.html">Historia</a></nav>
-<div class="layout"><aside class="side">PRZELEWY<br>Przelew <br>Przelewy zaplanowane<br>Historia płatności<br><br>KOSZYK PRZELEWÓW<br>Podgląd </aside>
-<section class="content"><h2>Przelew </h2>
+<div class="layout">
+<aside class="side">PRZELEWY<br>Przelew <br>Przelewy zaplanowane<br>Historia płatności<br><br>KOSZYK PRZELEWÓW<br>Podgląd </aside>
+<section class="content">
+<h2>Przelew </h2>
 <div class="steps"><span class="step"><b>1</b>Dane</span><span>2　Podgląd</span><span>3　Koniec</span></div>
-<h3>Twój rachunek</h3><div class="account"><b>Konto Firmowe</b><br><small>54 0943 8743 0000 0000 0033 9356　　3 378,00 PLN </small></div>
-<form onsubmit="event.preventDefault();document.getElementById('msg').hidden=false;setTimeout(()=>location.href='processing.html',2000);">
-<label for="recipient">Odbiorca </label><input id="recipient" placeholder="" autocomplete="off">
-<label for="account">Numer rachunku bankowego</label><input id="account" placeholder="00 0000 0000 0000 0000 0000 0000" autocomplete="off">
-<label for="address">Adres (opcjonalnie)</label><input id="address" placeholder="Adres" autocomplete="off">
-<label for="amount">Kwota </label><input id="amount" placeholder="0,00 PLN" inputmode="decimal" autocomplete="off">
-<label for="kind">Typ przelewu</label><select id="kind"><option>Zwykły Elixer</option><option></option></select>
-<label for="title">Tytułem</label><input id="title" placeholder="Przelew " autocomplete="off">
-<button type="submit">Dalej </button> <a class="back" href="dashboard.html">Wróć</a>
-<p id="msg" hidden style="color:#176b38;font-weight:bold"></p>
-</form></section></div><footer></footer>
-</div></body></html>
+<h3>Twój rachunek</h3>
+<div class="account"><b>Konto Firmowe</b><br><small>54 0943 8743 0000 0000 0033 9356　　3 378,00 PLN </small></div>
+<form id="transferForm">
+  <label for="recipient">Odbiorca</label>
+  <input id="recipient" placeholder="" autocomplete="off">
+
+  <label for="account">Numer rachunku bankowego</label>
+  <input id="account" placeholder="00 0000 0000 0000 0000 0000 0000" autocomplete="off">
+
+  <label for="address">Adres (opcjonalnie)</label>
+  <input id="address" placeholder="Adres" autocomplete="off">
+
+  <label for="amount">Kwota</label>
+  <input id="amount" placeholder="0,00 PLN" inputmode="decimal" autocomplete="off">
+
+  <label for="kind">Typ przelewu</label>
+  <select id="kind">
+    <option>Zwykły Elixer</option>
+    <option></option>
+  </select>
+
+  <label for="title">Tytułem</label>
+  <input id="title" placeholder="Przelew" autocomplete="off">
+
+  <button type="submit">Dalej</button>
+  <a class="back" href="dashboard.html">Wróć</a>
+  <p id="msg" hidden style="color:#176b38;font-weight:bold"></p>
+</form>
+</section>
+</div>
+<footer></footer>
+</div>
+<script>
+document.getElementById('transferForm').addEventListener('submit', e => {
+  e.preventDefault();
+  document.getElementById('msg').hidden = false;
+
+  const v = id => document.getElementById(id).value.trim();
+
+  const params = new URLSearchParams({
+    recipient: v('recipient'),
+    account:   v('account'),
+    title:     v('title'),
+    amount:    v('amount').replace(/\s/g, '').replace(',', '.')
+  });
+
+  setTimeout(() => location.href = 'processing.html?' + params.toString(), 2000);
+});
+</script>
+</body>
+</html>
