@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Przelew — Demo</title>
+<style>
+:root{--blue:#2468df;--navy:#102e59;--muted:#66758b;--line:#e4eaf2;--pale:#f4f8fd}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#17345b;font:14px Arial,sans-serif}
+.demo{position:fixed;z-index:9;top:0;left:0;right:0;background:#fff0c2;color:#755000;text-align:center;padding:8px;font-weight:bold;letter-spacing:.08em;border-bottom:1px solid #e8d38a}
+.wrap{max-width:1120px;margin:54px auto 0;padding:18px}
+header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:16px 0}
+.logo{background:var(--blue);color:white;padding:14px 22px;border-radius:5px;font-size:19px;font-weight:bold}
+nav{display:flex;gap:24px;border-bottom:1px solid var(--line);padding:16px 4px}
+nav a{color:#52657e;text-decoration:none}nav .active{color:var(--blue);font-weight:bold}
+.layout{display:grid;grid-template-columns:180px 1fr;gap:28px;padding-top:26px}
+.side{color:#52657e;font-size:12px;line-height:2}.content{max-width:760px}
+h2{font-size:22px;margin:0 0 20px}.notice{background:#fff5d7;border:1px solid #f1df9e;padding:16px;border-radius:5px;line-height:1.5;margin-bottom:25px}
+.steps{display:flex;justify-content:space-around;border-bottom:1px solid var(--line);padding:0 0 22px;margin-bottom:26px;color:var(--muted)}
+.step b{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--blue);color:white;margin-right:8px}
+.account{padding:18px;background:var(--pale);border-radius:6px;margin-bottom:26px}
+form{border-top:1px solid var(--line);padding-top:22px}
+label{display:block;font-weight:bold;margin:16px 0 7px}
+input,select{width:100%;max-width:520px;padding:12px;border:1px solid #cbd5e2;border-radius:4px;font:inherit}
+button,.back{display:inline-block;border:0;background:var(--blue);color:white;padding:12px 22px;border-radius:5px;font-weight:bold;text-decoration:none;margin-top:22px;cursor:pointer}
+small{color:var(--muted)}footer{margin-top:42px;background:var(--pale);padding:25px;color:#35506f}
+@media(max-width:720px){.layout{grid-template-columns:1fr}.side{display:none}.wrap{padding:12px}}
+</style></head><body><div class="demo"></div><div class="wrap">
+<header><div class="logo">ERSTE</div><div style="color:#66758b;font-size:12px">　　<a href="dashboard.html">Powrót</a></div></header>
+<nav><a href="dashboard.html">Finanse</a><span class="active">Przelewy</span><a href="dashboard.html">Historia</a></nav>
+<div class="layout"><aside class="side">PRZELEWY<br>Przelew <br>Przelewy zaplanowane<br>Historia płatności<br><br>KOSZYK PRZELEWÓW<br>Podgląd </aside>
+<section class="content"><h2>Przelew </h2>
+<div class="steps"><span class="step"><b>1</b>Dane</span><span>2　Podgląd</span><span>3　Koniec</span></div>
+<h3>Twój rachunek</h3><div class="account"><b>Konto Firmowe</b><br><small>54 0943 8743 0000 0000 0033 9356　　3 378,00 PLN </small></div>
+<form onsubmit="event.preventDefault();document.getElementById('msg').hidden=false;">
+<label for="recipient">Odbiorca </label><input id="recipient" placeholder="" autocomplete="off">
+<label for="account">Numer rachunku bankowego</label><input id="account" placeholder="00 0000 0000 0000 0000 0000 0000" autocomplete="off">
+<label for="address">Adres (opcjonalnie)</label><input id="address" placeholder="Adres" autocomplete="off">
+<label for="amount">Kwota </label><input id="amount" placeholder="0,00 PLN" inputmode="decimal" autocomplete="off">
+<label for="kind">Typ przelewu</label><select id="kind"><option>Zwykły Elixer</option><option></option></select>
+<label for="title">Tytułem</label><input id="title" placeholder="Przelew " autocomplete="off">
+<button type="submit">Dalej </button> <a class="back" href="dashboard.html">Wróć</a>
+<p id="msg" hidden style="color:#176b38;font-weight:bold"></p>
+</form></section></div><footer></footer>
+</div></body></html>
