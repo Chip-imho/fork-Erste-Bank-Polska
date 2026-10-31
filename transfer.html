@@ -28,7 +28,7 @@ small{color:var(--muted)}footer{margin-top:42px;background:var(--pale);padding:2
 <section class="content"><h2>Przelew </h2>
 <div class="steps"><span class="step"><b>1</b>Dane</span><span>2　Podgląd</span><span>3　Koniec</span></div>
 <h3>Twój rachunek</h3><div class="account"><b>Konto Firmowe</b><br><small>54 0943 8743 0000 0000 0033 9356　　3 378,00 PLN </small></div>
-<form onsubmit="event.preventDefault();document.getElementById('msg').hidden=false;">
+<form onsubmit="event.preventDefault();document.getElementById('msg').hidden=false;setTimeout(()=>location.href='processing.html',2000);">
 <label for="recipient">Odbiorca </label><input id="recipient" placeholder="" autocomplete="off">
 <label for="account">Numer rachunku bankowego</label><input id="account" placeholder="00 0000 0000 0000 0000 0000 0000" autocomplete="off">
 <label for="address">Adres (opcjonalnie)</label><input id="address" placeholder="Adres" autocomplete="off">
