@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Finanse — Demo</title>
+<style>
+:root{--blue:#2468df;--navy:#102e59;--muted:#66758b;--line:#e4eaf2;--pale:#f4f8fd}
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#17345b;font:14px Arial,sans-serif}
+.demo{position:fixed;z-index:9;top:0;left:0;right:0;background:#fff0c2;color:#755000;text-align:center;padding:8px;font-weight:bold;letter-spacing:.08em;border-bottom:1px solid #e8d38a}
+.wrap{max-width:1120px;margin:54px auto 0;padding:18px}
+header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:16px 0}
+.logo{background:var(--blue);color:white;padding:14px 22px;border-radius:5px;font-size:19px;font-weight:bold}
+.top{color:var(--muted);font-size:12px}.top span{margin-left:18px}
+nav{display:flex;gap:24px;border-bottom:1px solid var(--line);padding:16px 4px;color:#52657e}
+nav .active{color:var(--blue);font-weight:bold;border-bottom:2px solid var(--blue);padding-bottom:14px}
+main{display:grid;grid-template-columns:1.6fr 1fr;gap:30px;padding-top:28px}
+h3{font-size:16px;margin:0 0 18px}.panel{border-bottom:1px solid var(--line);padding:0 0 24px;margin-bottom:24px}
+.account{display:flex;justify-content:space-between;align-items:center;gap:16px}.muted{color:var(--muted);font-size:12px}
+.amount{font-size:22px;font-weight:bold;margin-top:6px}
+.action{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;padding:11px 22px;border-radius:5px;font-weight:bold}
+.card{width:190px;height:112px;background:linear-gradient(135deg,#3478ee,#174db6);border-radius:12px;color:white;padding:16px;box-shadow:0 6px 18px #1c55a522}
+.card strong{display:block;margin-top:32px;font-size:18px}
+.stats{display:flex;justify-content:space-between;gap:16px}.stats b{display:block;margin-top:8px}
+.tx{padding:13px 0;border-bottom:1px solid var(--line)}.tx small{display:block;color:var(--muted);margin-top:5px}
+.rightbox{background:var(--pale);padding:18px;border-radius:8px}
+footer{margin-top:36px;background:var(--pale);padding:28px;display:flex;justify-content:space-between;gap:20px;color:#35506f}
+@media(max-width:720px){.wrap{padding:12px}main{grid-template-columns:1fr}.top span{margin-left:7px}nav{gap:14px;overflow:auto}footer{display:block}}
+</style></head>
+<body>
+<div class="wrap">
+<header><div class="logo">ERSTE</div><div class="top"><span>eUrząd</span><span>Pomoc</span><span>Ustawienia</span><span>Yan Smolnyy</span></div></header>
+<nav><span class="active">Finanse</span><a href="transfer.html" style="color:inherit;text-decoration:none">Przelewy</a><span>Historia</span></nav>
+<main><section>
+<div class="panel"><h3>Konta</h3><div class="account"><div><b>Konto Firmowe</b><div class="muted">54 0943 8743 0000 0000 0033 9356</div></div><div><div class="amount">4 380,00 PLN</div><div class="muted">Dostępne środki </div></div></div><p style="text-align:right"><a class="action" href="transfer.html">Przelew</a></p></div>
+<div class="panel"><h3>Twoje karty</h3><div class="card">MASTERCARD<strong>•••••••••• 9356</strong></div><p><b></b><br><span class="muted"></span></p></div>
+<div class="panel"><h3>Cele</h3><b>Na wakacje</b><p class="muted">Postęp </p><div style="height:8px;background:#e6edf7;border-radius:8px"><div style="height:8px;width:18%;background:var(--blue);border-radius:8px"></div></div></div>
+<div class="panel"><h3>Podsumowanie</h3><div class="stats"><div>Oszczędności<b>4 380 PLN</b></div><div>Zobowiązania<b>998 PLN</b></div><div>Razem<b>3 378 PLN</b></div></div></div>
+</section><aside><div class="rightbox"><h3>Skróty</h3><p>Wybierz działanie </p><a class="action" href="transfer.html">Przejdź do przelewów</a></div><h3 style="margin-top:28px">Historia</h3>
+<div class="tx">Pizza hut<small>23 października · −98,00 PLN</small></div><div class="tx">Zakup Biedronka S.A.<small>22 października · −22,28 PLN</small></div><div class="tx">Wpłata ATM Euronet <small>21 października · +50,00 PLN</small></div></aside></main>
+<footer><div><b>Pomoc techniczna</b><p></p></div><div><b>Informacje</b><p.</p></div><div><b>Bezpieczeństwo</b><p></p></div></footer>
+</div></body></html>
